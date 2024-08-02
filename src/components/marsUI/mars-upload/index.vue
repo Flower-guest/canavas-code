@@ -1,3 +1,11 @@
+<!--
+ * @Author: cxj 1481240653@qq.com
+ * @Date: 2024-08-02 11:19:31
+ * @LastEditors: cxj 1481240653@qq.com
+ * @LastEditTime: 2024-08-02 21:38:38
+ * @FilePath: \new-code-canvas\src\components\marsUI\mars-upload\index.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div class="flex items-center">
     <el-input class="mars-upload" v-bind="attrs">
@@ -28,7 +36,7 @@ export default defineComponent({
 
     const choseImg = (img) => {
       emit("update:modelValue", img);
-      console.log(img);
+      emit('change', img);
     };
     return {
       attrs,
