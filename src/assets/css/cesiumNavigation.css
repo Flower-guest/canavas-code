@@ -1,0 +1,41 @@
+/* 切换影像菜单 */
+.marsGreenGradientPnl {
+  width: 100px;
+  text-align: center;
+  background-image: linear-gradient(to right, #565d39, #00ffc3);
+  position: absolute;
+  left: -56px;
+  bottom: 28px;
+  cursor: default;
+  padding: 5px;
+  border: 1px solid #9c9944e8;
+}
+
+.marsGreenGradientPnl:hover {
+  border: 1px solid rgb(9, 255, 0);
+}
+
+.marsGreenGradientPnl::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: -30px;
+  height: 30px;
+  border-left: 2px dashed #c5e22770;
+}
+.cesium-viewer-toolbar {
+  position: absolute;
+  top: auto;
+  bottom: 140px;
+  left: auto;
+  right: 15px;
+}
+.cesium-viewer-toolbar .cesium-toolbar-button {
+  width: 80px !important;
+  height: 80px !important;
+}
+.cesium-viewer-toolbar .cesium-baseLayerPicker-dropDown {
+  right: 90px !important;
+  top: -164px !important;
+  z-index:10000000;
+}
