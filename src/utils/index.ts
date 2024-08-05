@@ -12,7 +12,7 @@ export const getServeImg = (url) => {
 
 export const timestampToYearMonthDay = (timestamp) => {
   // 创建一个新的Date对象，传入时间戳（注意时间戳是毫秒，而JavaScript的Date需要毫秒）
-  const date = new Date(timestamp);
+  const date = new Date(timestamp * 1000);
 
   // 获取年、月、日
   const year = date.getFullYear();

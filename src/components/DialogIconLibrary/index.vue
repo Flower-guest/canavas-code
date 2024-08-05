@@ -15,9 +15,11 @@
             文件名搜索：
             <el-input
               v-model="iconState.search"
+              @change="getIconLibrarySelect"
               style="width: 240px"
               clearable
             />
+            <el-button class="ml-6px" @click="getIconLibrarySelect" :icon="Search" circle />
           </div>
           <div class="flex">
             <el-button
@@ -104,9 +106,9 @@
 
 <script setup lang="ts">
 import { getServeImg, timestampToYearMonthDay } from "@/utils";
-// import { GetIconLibrarySelect } from "@/service/api";
+import { GetIconLibrarySelect } from "@/service/api";
 import { ElNotification } from "element-plus";
-import { Check, Refresh, DeleteFilled } from "@element-plus/icons-vue";
+import { Check, Refresh, DeleteFilled, Search } from "@element-plus/icons-vue";
 
 defineProps({
   visible: {
@@ -130,244 +132,9 @@ const iconState = reactive<any>({
 });
 
 const getIconLibrarySelect = async () => {
-  const data = {
-    total: 15,
-    rows: [
-      {
-        id: 31,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/908c9a82ab39a39110d3c904c24b273d.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9603.png",
-        filesize: 1544,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722408355,
-        updatetime: 1722408355,
-        uploadtime: 1722408355,
-        storage: "local",
-        sha1: "b429b2dd6202191cb15ae1d2185487034e3bd7e1",
-        fullurl: "/uploads/20240731/908c9a82ab39a39110d3c904c24b273d.png",
-        thumb_style: "",
-      },
-      {
-        id: 30,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/943c663e4478d8e91e5a1129b3685b42.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9626.png",
-        filesize: 1634,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722408335,
-        updatetime: 1722408335,
-        uploadtime: 1722408335,
-        storage: "local",
-        sha1: "a91abd19559d802facf23ba5d613571824fdeffd",
-        fullurl: "/uploads/20240731/943c663e4478d8e91e5a1129b3685b42.png",
-        thumb_style: "",
-      },
-      {
-        id: 29,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/01ff9d9398d6fb5ef90d86e7ba4c69fa.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9627.png",
-        filesize: 1540,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722408246,
-        updatetime: 1722408246,
-        uploadtime: 1722408246,
-        storage: "local",
-        sha1: "e19cca26871c47a1adaf2482eb757c95c784fb33",
-        fullurl: "/uploads/20240731/01ff9d9398d6fb5ef90d86e7ba4c69fa.png",
-        thumb_style: "",
-      },
-      {
-        id: 28,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/06e5143b3428c07f0a289561bedd833c.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9610.png",
-        filesize: 1312,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722408139,
-        updatetime: 1722408139,
-        uploadtime: 1722408139,
-        storage: "local",
-        sha1: "fcaab94a439b70ae5a2b353df6b4f0d4239a5c79",
-        fullurl: "/uploads/20240731/06e5143b3428c07f0a289561bedd833c.png",
-        thumb_style: "",
-      },
-      {
-        id: 27,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/454bb3afda5b7b50376afa30a1391a31.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9621.png",
-        filesize: 1089,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722408110,
-        updatetime: 1722408110,
-        uploadtime: 1722408110,
-        storage: "local",
-        sha1: "78bb9fe8dfd79b76565805d9504b93892de2950a",
-        fullurl: "/uploads/20240731/454bb3afda5b7b50376afa30a1391a31.png",
-        thumb_style: "",
-      },
-      {
-        id: 26,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/3eefdaf086b0cecaed6622b09ea3182c.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9633.png",
-        filesize: 1115,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722407916,
-        updatetime: 1722407916,
-        uploadtime: 1722407916,
-        storage: "local",
-        sha1: "add5bb3ea34fe4bdb2eaae4715259f1a1b7d52a6",
-        fullurl: "/uploads/20240731/3eefdaf086b0cecaed6622b09ea3182c.png",
-        thumb_style: "",
-      },
-      {
-        id: 25,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/6930caefd10b32dfac562dd7af2a6429.png",
-        imagewidth: "27",
-        imageheight: "28",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 8980.png",
-        filesize: 1535,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722407733,
-        updatetime: 1722407733,
-        uploadtime: 1722407733,
-        storage: "local",
-        sha1: "abea4d8c021550bdc3193f5a585166c8ef896f07",
-        fullurl: "/uploads/20240731/6930caefd10b32dfac562dd7af2a6429.png",
-        thumb_style: "",
-      },
-      {
-        id: 24,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/61374b79a3003597b287bf971debb9b2.png",
-        imagewidth: "24",
-        imageheight: "21",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 8981.png",
-        filesize: 1020,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722407672,
-        updatetime: 1722407672,
-        uploadtime: 1722407672,
-        storage: "local",
-        sha1: "d3049bf528983536da41f12396c5a9060995b970",
-        fullurl: "/uploads/20240731/61374b79a3003597b287bf971debb9b2.png",
-        thumb_style: "",
-      },
-      {
-        id: 23,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/e3ca6a590bcff23caf3650d82a1541e3.png",
-        imagewidth: "36",
-        imageheight: "36",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 9620.png",
-        filesize: 1166,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722407590,
-        updatetime: 1722407590,
-        uploadtime: 1722407590,
-        storage: "local",
-        sha1: "0726cdb2991d220320b0e6bd50d0929f8159d085",
-        fullurl: "/uploads/20240731/e3ca6a590bcff23caf3650d82a1541e3.png",
-        thumb_style: "",
-      },
-      {
-        id: 22,
-        mid: 2001,
-        category: "unclassed",
-        admin_id: 0,
-        user_id: 0,
-        url: "/uploads/20240731/61df7a1353263d2841f230e8f671a004.png",
-        imagewidth: "24",
-        imageheight: "27",
-        imagetype: "png",
-        imageframes: 0,
-        filename: "组 8979.png",
-        filesize: 1150,
-        mimetype: "image/png",
-        extparam: "",
-        createtime: 1722407518,
-        updatetime: 1722407518,
-        uploadtime: 1722407518,
-        storage: "local",
-        sha1: "781a4d3a677f65f5cf09fd629d0fb3c85de24aa2",
-        fullurl: "/uploads/20240731/61df7a1353263d2841f230e8f671a004.png",
-        thumb_style: "",
-      },
-    ],
-  };
-  // const res = await GetIconLibrarySelect(iconState);
-  iconState.list = data.rows;
-  iconState.total = data.total;
+  const res = await GetIconLibrarySelect(iconState);
+  iconState.list = res.rows;
+  iconState.total = res.total;
 };
 
 // 操作
@@ -383,24 +150,26 @@ const operate = (val, type) => {
 const handleSizeChange = (val: number) => {
   iconState.limit = val;
   iconState.offset = (iconState.page - 1) * val;
-  // getIconLibrarySelect()
+  getIconLibrarySelect();
 };
 
 // 分页按钮点击事件
 const handleCurrentChange = (val: any) => {
   iconState.page = val;
-  // getIconLibrarySelect()
+  iconState.offset = (iconState.page - 1) * iconState.limit;
+  console.log(iconState.page, iconState.offset);
+  getIconLibrarySelect();
 };
 
 // 刷新按钮点击事件
 const handRefresh = () => {
-  (iconState.list = []),
-    (iconState.page = 1),
-    (iconState.limit = 10),
-    (iconState.total = 0),
-    (iconState.offset = 0),
-    (iconState.search = ""),
-    getIconLibrarySelect();
+  iconState.list = [];
+  iconState.page = 1;
+  iconState.limit = 10;
+  iconState.total = 0;
+  iconState.offset = 0;
+  iconState.search = "";
+  getIconLibrarySelect();
 };
 
 /**

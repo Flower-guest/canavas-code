@@ -52,8 +52,8 @@ export const GetDatalistByType = (data) => {
 
 // 图片库
 export const GetIconLibrarySelect = (data) => {
-  return jsonRequest.get({
-    url: `general/attachment/select?limit=${data.limit}&sort=id&order=desc&offset=${data.offset}&search=${data.search}&dialog=1`,
+  return jsonRequest.get<{ rows: any, total: number }>({
+    url: `general/attachment/selectlist?limit=${data.limit}&sort=id&order=desc&offset=${data.offset}&search=${data.search}&filter={"mimetype":"image"}&op={"mimetype"%3A"LIKE %...%"}`,
   });
 }
 
