@@ -2,6 +2,7 @@
   <el-select
     class="mars-select"
     :popper-class="'mars-select-dropdown'"
+    clearable
     v-bind="attrs"
   >
     <el-option

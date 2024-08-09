@@ -1176,7 +1176,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -1237,6 +1237,51 @@ const styleConfig = {
         defval: "#ffffff",
         show(style) {
           return style.outline;
+        },
+      },
+      {
+        name: "outlineStyle",
+        next: "materialType",
+        label: "边框材质",
+        type: "combobox",
+        defval: "Color",
+        data: [
+          {
+            label: "纯色",
+            value: "Color",
+            contant: "outlineColor",
+            defval: "#fff",
+          },
+          { label: "十字间隔", value: "LineCross" },
+          {
+            label: "图片",
+            value: "Image",
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
+          },
+          { label: "衬色线", value: "PolylineOutline" },
+          { label: "光晕", value: "PolylineGlow" },
+          { label: "泛光线", value: "LineBloom" },
+          { label: "流动颜色", value: "LineFlowColor" },
+
+          {
+            label: "流动line",
+            value: "LineFlow",
+            defval: {
+              image: "src/assets/img/textures/fence-line.png",
+              repeat_x: 10,
+            },
+          },
+          {
+            label: "流动fence",
+            value: "LineFlow-1",
+            defval: {
+              image: "src/assets/img/textures/fence.png",
+              repeat_x: 10,
+            },
+          },
+        ],
+        show(style) {
+          return style.outline && !style.diffHeight;
         },
       },
 
@@ -1345,7 +1390,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -1932,7 +1977,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -2139,7 +2184,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -3046,7 +3091,10 @@ const styleConfig = {
           {
             label: "流动blue",
             value: "LineFlow",
-            defval: { image: "src/assets/img/textures/line-arrow-blue.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/line-arrow-blue.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动dovetail",
@@ -3067,7 +3115,10 @@ const styleConfig = {
           {
             label: "流动aqua",
             value: "LineFlow-4",
-            defval: { image: "src/assets/img/textures/line-color-aqua.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/line-color-aqua.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动azure",
@@ -3098,12 +3149,18 @@ const styleConfig = {
           {
             label: "流动colour",
             value: "LineFlow-8",
-            defval: { image: "src/assets/img/textures/line-colour.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/line-colour.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动gradual",
             value: "LineFlow-9",
-            defval: { image: "src/assets/img/textures/line-gradual.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/line-gradual.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动pulse",
@@ -3113,7 +3170,10 @@ const styleConfig = {
           {
             label: "流动sprite",
             value: "LineFlow-11",
-            defval: { image: "src/assets/img/textures/line-sprite.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/line-sprite.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动tarans",
@@ -3123,7 +3183,10 @@ const styleConfig = {
           {
             label: "流动vertebral",
             value: "LineFlow-14",
-            defval: { image: "src/assets/img/textures/line-vertebral.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/line-vertebral.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动vertebral-blue",
@@ -3136,7 +3199,10 @@ const styleConfig = {
           {
             label: "流动fence-line",
             value: "LineFlow-16",
-            defval: { image: "src/assets/img/textures/fence-line.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/fence-line.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动transarrow",
@@ -3283,12 +3349,18 @@ const styleConfig = {
           {
             label: "流动line",
             value: "LineFlow",
-            defval: { image: "src/assets/img/textures/fence-line.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/fence-line.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动fence",
             value: "LineFlow-1",
-            defval: { image: "src/assets/img/textures/fence.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/fence.png",
+              repeat_x: 10,
+            },
           },
         ],
         show(style) {
@@ -3379,7 +3451,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -3391,12 +3463,18 @@ const styleConfig = {
           {
             label: "流动arrow",
             value: "LineFlow",
-            defval: { image: "src/assets/img/textures/arrow.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/arrow.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动arrowh",
             value: "LineFlow-1",
-            defval: { image: "src/assets/img/textures/arrow-h.png", repeat_x: 10 },
+            defval: {
+              image: "src/assets/img/textures/arrow-h.png",
+              repeat_x: 10,
+            },
           },
           {
             label: "流动fence",
@@ -3406,7 +3484,10 @@ const styleConfig = {
           {
             label: "流动line",
             value: "LineFlow-3",
-            defval: { image: "src/assets/img/textures/fence-line.png", axisY: true },
+            defval: {
+              image: "src/assets/img/textures/fence-line.png",
+              axisY: true,
+            },
           },
         ],
         show(style) {
@@ -3768,7 +3849,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -3928,7 +4009,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },
@@ -4106,7 +4187,7 @@ const styleConfig = {
           {
             label: "图片",
             value: "Image",
-            defval: { image: "img/tietu/gugong.jpg" },
+            defval: { image: "src/assets/img/textures/gugong.jpg" },
           },
           { label: "网格", value: "Grid" },
           { label: "条纹", value: "Stripe" },

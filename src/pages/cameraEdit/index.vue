@@ -12,22 +12,35 @@
     <el-row :gutter="4">
       <template v-for="i in list" :key="i.name">
         <el-col class="text-right" :span="8">{{ i.name }}:</el-col>
-        <el-col class="text-left" :span="16">{{ sceneCamera[i.prop] }}</el-col>
+        <el-col class="text-left" :span="16">
+          <el-input
+            v-if="isEdit"
+            class="mars-input"
+            @input="changeCamera"
+            v-model="sceneCamera[i.prop]"
+          />
+          <span v-else>{{ sceneCamera[i.prop] }}</span>
+        </el-col>
       </template>
       <el-col class="text-right" :span="8">飞行时间:</el-col>
       <el-col :span="16"><el-input v-model="sceneCamera.duration" /></el-col>
-      <el-col class="mt-10px text-right" :span="24"
-        ><el-button @click="save" round>保存</el-button></el-col
-      >
+      <el-col class="mt-10px" :span="24">
+        <el-button @click="isEdit = !isEdit" round>{{
+          isEdit ? "取消编辑" : "编辑视角"
+        }}</el-button>
+        <el-button @click="setCamera(null)" round>当前视角</el-button>
+        <el-button @click="save" round>保存</el-button>
+      </el-col>
     </el-row>
   </div>
 </template>
 
 <script lang="ts" setup>
-import * as mars3d from "mars3d";
-import { useWidGet } from "@/store";
+import _ from "lodash-es";
 import { getAssets } from "@/utils";
-import { postUIEdit, postMenuJsonData } from "@/service/api";
+import { getMenuJsonData, postUIEdit, postMenuJsonData } from "@/service/api";
+import { useMessage } from "@/hooks/useMessage";
+import { useWidGet } from "@/store";
 
 interface Props {
   visible: boolean; // 是否显示
@@ -59,7 +72,7 @@ const list = [
     prop: "alt",
   },
 ];
-
+const isEdit = ref<boolean>(false);
 const sceneCamera = reactive({
   alt: "",
   pitch: "",
@@ -69,13 +82,32 @@ const sceneCamera = reactive({
   duration: 1,
 });
 
-const cameraChanged = () => {
-  const { alt, pitch, heading, lng, lat } = window.cesium.map3d.getCameraView();
+// 监听左侧json面板变化
+watch(
+  () => store.activeMenuId,
+  async (newVal) => {
+    if (newVal && newVal !== window.info.id) {
+      const { scene_camera } = await getMenuJsonData(newVal);
+      setCamera(scene_camera);
+    } else if (newVal === window.info.id) {
+      setCamera(window.info.scene_camera);
+    }
+  }
+);
+
+const changeCamera = _.debounce(() => {
+  window.cesium.flyToPoint(sceneCamera);
+}, 500);
+
+const setCamera = (scene_camera = null) => {
+  const camera = scene_camera || window.cesium.map3d.getCameraView();
+  const { alt, pitch, heading, lng, lat } = camera;
   sceneCamera.alt = alt;
   sceneCamera.pitch = pitch;
   sceneCamera.heading = heading;
   sceneCamera.lng = lng;
   sceneCamera.lat = lat;
+  !scene_camera && changeCamera();
 };
 
 const save = async () => {
@@ -93,11 +125,8 @@ const save = async () => {
   }
 };
 
-window.cesium.map3d.on(mars3d.EventType.cameraMoveEnd, cameraChanged);
-
 const emit = defineEmits(["update:visible"]);
 const updateVisible = () => {
-  window.cesium.map3d.off(mars3d.EventType.cameraMoveEnd, cameraChanged);
   emit("update:visible", false);
 };
 </script>
@@ -110,7 +139,8 @@ const updateVisible = () => {
   background-color: rgba(39, 44, 54, 0.8);
   left: 220px;
   top: 40px;
-  width: 200px;
+  width: 210px;
+  padding-bottom: 10px;
 
   .title {
     font-size: 14px;
@@ -141,6 +171,9 @@ const updateVisible = () => {
         color: #fff;
       }
     }
+  }
+  .el-button.is-round {
+    padding: 8px 6px;
   }
 }
 
