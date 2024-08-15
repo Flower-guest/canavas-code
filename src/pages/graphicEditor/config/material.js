@@ -609,27 +609,37 @@ const materialConfig = {
       defval: "",
     },
     {
+      name: "maskColor",
+      label: "遮罩颜色",
+      type: "color",
+      defval: "rgba(0,0,0,1)",
+    },
+    {
       name: "dataType",
       label: "关联数据类型",
       type: "combobox",
       data: transformData(window.info.dataType),
       defval: "",
-    },{
+    },
+    {
       name: "dataValue",
       label: "关联数据",
       type: "selectV2",
       defval: "",
-    },{
+    },
+    {
       name: "vrLink",
       label: "全景链接",
       type: "input",
       defval: "",
-    },{
+    },
+    {
       name: "designImg",
       label: "设计比对图片",
       type: "upload",
       defval: "",
-    },{
+    },
+    {
       name: "customIcon",
       label: "自定义点位图标",
       type: "upload",

@@ -164,14 +164,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -405,14 +405,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -531,14 +531,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -677,14 +677,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -836,14 +836,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -973,14 +973,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -1094,14 +1094,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -1289,14 +1289,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -1456,14 +1456,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -1592,14 +1592,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -1858,14 +1858,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -2017,14 +2017,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -2202,14 +2202,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -3232,14 +3232,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -3394,14 +3394,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -3523,14 +3523,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -3718,14 +3718,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -3905,14 +3905,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -4067,14 +4067,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -4245,14 +4245,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },
@@ -4463,14 +4463,14 @@ const styleConfig = {
         name: "distanceDisplayCondition",
         label: "是否按视距显示",
         type: "radio",
-        defval: false,
+        defval: true,
       },
       {
         name: "distanceDisplayCondition_far",
         label: "最大距离",
         type: "number",
         step: 1,
-        defval: 100000.0,
+        defval: 50000,
         show(style) {
           return style.distanceDisplayCondition;
         },

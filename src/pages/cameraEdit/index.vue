@@ -101,12 +101,13 @@ const changeCamera = _.debounce(() => {
 
 const setCamera = (scene_camera = null) => {
   const camera = scene_camera || window.cesium.map3d.getCameraView();
-  const { alt, pitch, heading, lng, lat } = camera;
+  const { alt, pitch, heading, lng, lat,duration } = camera;
   sceneCamera.alt = alt;
   sceneCamera.pitch = pitch;
   sceneCamera.heading = heading;
   sceneCamera.lng = lng;
   sceneCamera.lat = lat;
+  sceneCamera.duration = duration;
   !scene_camera && changeCamera();
 };
 
